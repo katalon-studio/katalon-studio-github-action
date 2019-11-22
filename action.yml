@@ -1,0 +1,12 @@
+# action.yml
+name: 'Katalon-Studio'
+description: 'KS Action for running test'
+inputs:
+  ks_command:  # id of input
+    description: 'katalon parameter'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.ks_command}}
