@@ -15,7 +15,18 @@ This action to run KS test and with your test cases source codes.
 done
 
 ## Example usage
+on: [push]
 
-uses: actions/katalonstudion@v1 <br/>
-with:<br/>
-  ks_command: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"'
+jobs:
+  katalon_test_job:
+    runs-on: ubuntu-latest
+    name: Run katalon Studio Test CLI
+    steps:
+    # To use this repository's private action, you must check out the repository
+    - name: Checkout
+      uses: actions/checkout@v1
+    - uses: ./ # Uses an action in the root directory
+    - name: Get and run action
+      uses: katalon-studio/katalon-studio-github-action@master
+      with:
+        Katalon-Studio: 'katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"'
