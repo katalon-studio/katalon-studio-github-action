@@ -15,6 +15,7 @@ This action to run KS test and with your test cases source codes.
 done
 
 ## Example usage
+```yaml
 on: [push]
 
 jobs:
@@ -30,3 +31,4 @@ jobs:
       uses: katalon-studio/katalon-studio-github-action@master
       with:
         Katalon-Studio: 'katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"'
+```
