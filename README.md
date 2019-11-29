@@ -16,6 +16,10 @@ done
 
 ## Example usage
 
-uses: actions/katalonstudion@v1 <br/>
-with:<br/>
+
+```yaml
+uses: actions/katalonstudion@v1
+with:
   ks_command: '-browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"'
+  ks_api_key: ''
+```
