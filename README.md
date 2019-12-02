@@ -4,15 +4,14 @@ This action to run KS test and with your test cases source codes.
 
 ## Inputs
 
-### `your katalon command `
+Input your katalon command and apiKey
+refer to more information for using command from https://docs.katalon.com/
 
-**Required** the katalon commands and test cases files 
+**Required** the katalon commands , apikey and test cases files 
 
-## Outputs
 
-### `status`
-
-done
+This is the example to using github action <br>
+Please change to the latest github action version and your Input. <br>
 
 ## Example usage
 ```yaml
@@ -28,7 +27,7 @@ jobs:
       uses: actions/checkout@v1
     - uses: ./ # Uses an action in the root directory
     - name: Get and run action
-      uses: katalon-studio/katalon-studio-github-action@0.6
+      uses: katalon-studio/katalon-studio-github-action@0.7
       with:
         katalon_api_key: 'b279faef-0a5a-4aa5-8cff-ebc81466ac8c'
         Katalon_command: 'katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"'
