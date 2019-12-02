@@ -12,6 +12,7 @@ refer to more information for using command from https://docs.katalon.com/
 
 This is the example to using github action <br>
 Please change to the latest github action version and your Input. <br>
+Katalon Github Action Marketplace link :  https://github.com/marketplace/actions/katalon-studio
 
 ## Example usage
 ```yaml
