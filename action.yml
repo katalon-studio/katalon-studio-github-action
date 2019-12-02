@@ -8,12 +8,10 @@ inputs:
   ks_api_key:
     description: 'api key'
     required: true
-outputs:
-  status:
-      description: 'Status of running KS Test'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.ks_command}}
     - ${{ inputs.ks_api_key}}
+  
