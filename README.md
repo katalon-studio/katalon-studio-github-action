@@ -12,7 +12,12 @@ refer to more information for using command from https://docs.katalon.com/
 
 This is the example to using github action <br>
 Please change to the latest github action version and your Input. <br>
+
+Setup API Key using Secret name :  KATALON_API_NAME
+
 Katalon Github Action Marketplace link :  https://github.com/marketplace/actions/katalon-studio
+
+
 
 ## Example usage
 ```yaml
@@ -30,6 +35,6 @@ jobs:
     - name: Get and run action
       uses: katalon-studio/katalon-studio-github-action@0.7
       with:
-        katalon_api_key: 'b279faef-0a5a-4aa5-8cff-ebc81466ac8c'
+        katalon_api_key: ${{ secrets.KATALON_API_KEY }}
         Katalon_command: 'katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/TS_RegressionTest"'
 ```
