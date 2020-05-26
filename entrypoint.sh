@@ -1,2 +1,2 @@
 #!/bin/sh -l
-katalonc.sh -projectPath=/tmp/project $1 -apiKey=$2
+katalonc.sh $1 -apiKey=$2
