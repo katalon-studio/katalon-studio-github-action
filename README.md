@@ -33,7 +33,7 @@ jobs:
       uses: actions/checkout@v1
     - uses: ./ # Uses an action in the root directory
     - name: Get and run action
-      uses: katalon-studio/katalon-studio-github-action@0.9
+      uses: katalon-studio/katalon-studio-github-action@1.0
       with:
         katalon_api_key: ${{ secrets.KATALON_API_KEY }}
         Katalon_command: "katalon-execute.sh -browserType=Chrome -retry=0 -statusDelay=15 -testSuitePath=Test Suites/TS_RegressionTest"
