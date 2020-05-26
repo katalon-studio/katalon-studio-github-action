@@ -1,2 +1,2 @@
 #!/bin/sh -l
-katalonc.sh $1 -apiKey=$2
+katalonc.sh -projectPath=/github/workspace $1 -apiKey=$2
