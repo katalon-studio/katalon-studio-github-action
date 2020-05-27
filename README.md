@@ -31,7 +31,6 @@ jobs:
     # To use this repository's private action, you must check out the repository
     - name: Checkout
       uses: actions/checkout@v1
-    - uses: ./ # Uses an action in the root directory
     - name: Get and run action
       uses: katalon-studio/katalon-studio-github-action@1.4
       with:
