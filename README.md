@@ -24,11 +24,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install packages
-      run: npm install --save katalon-studio/katalon-agent#v1.4.0
     # Runs Katalon Studio Action
     - name: Katalon Studio Github Action
-      uses: atluu315/Katalon_Studio_Github_Action@1.0
+      uses: atluu315/Katalon_Studio_Github_Action@1.2
       with:
           version: '7.5.5'
           projectPath: '${{ github.workspace }}\<project name>.prj'
