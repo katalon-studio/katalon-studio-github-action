@@ -1,4 +1,4 @@
-name: 'Katalon Studio'
+name: 'Katalon Studio Github Action'
 description: 'Execute Katalon Studio'
 inputs:
       version: #id of input
