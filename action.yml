@@ -1,0 +1,26 @@
+name: 'Katalon Studio'
+description: 'Execute Katalon Studio'
+inputs:
+      version: #id of input
+            description: 'Which version of Katalon Studio to run'
+            required: true
+            default: ''
+            
+      location:
+            description: 'Location of Katalon Studio on local machine'
+            required: true
+            default: ''
+            
+      projectPath:
+            description: 'Project path to Katalon Studio'
+            required: true
+            default: ''
+            
+      args:
+            description: 'Arguments to run Katalon Studio Project'
+            required: true
+            default: ''
+
+runs:
+      using: 'node12'
+      main: 'index.js'
