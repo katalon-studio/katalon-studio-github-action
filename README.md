@@ -27,8 +27,8 @@ jobs:
     - name: Install packages
       run: npm install --save katalon-studio/katalon-agent#v1.4.0
     # Runs Katalon Studio Action
-    - name: Runs Katalon Studio Action Step
-      uses: ./ #Uses an action in the root directory
+    - name: Katalon Studio Github Action
+      uses: atluu315/Katalon_Studio_Github_Action@1.0
       with:
           version: '7.5.5'
           projectPath: '${{ github.workspace }}\<project name>.prj'
