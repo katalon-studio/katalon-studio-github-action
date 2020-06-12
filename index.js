@@ -1,4 +1,4 @@
-const {execute} = require('katalon-cli/src/katalon-studio');
+const {execute} = require('node_modules/katalon-cli/src/katalon-studio');
 const core = require('@actions/core');
 
 const user_version = core.getInput('version');
