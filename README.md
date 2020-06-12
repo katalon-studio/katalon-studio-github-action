@@ -31,6 +31,6 @@ jobs:
       uses: ./ #Uses an action in the root directory
       with:
           version: '7.5.5'
-          projectPath: $GITHUB_WORKSPACE/simple_project/simple_project
+          projectPath: '${{ github.workspace }}\<project name>.prj'
           args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Run All Test Suites" -apiKey= ${{ secrets.API_KEY }} --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY'
 ```
