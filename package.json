@@ -1,0 +1,24 @@
+{
+  "name": "github_action",
+  "version": "1.0.0",
+  "description": "Runs Katalon Studio in Github Action Workflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atluu315/Github_Action.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atluu315/Github_Action/issues"
+  },
+  "homepage": "https://github.com/atluu315/Github_Action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^3.0.0",
+    "katalon-cli": "github:katalon-studio/katalon-agent#v1.4.0"
+  }
+}

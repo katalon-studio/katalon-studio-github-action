@@ -1,39 +1,35 @@
+# Github_Action
 # Katalon Studio action test
 
-This action to run KS test and with your test cases source codes. 
+This action allows you to run KS test and with your test cases source codes. 
 
 ## Inputs
 
-Input your katalon command and apiKey
-refer to more information for using command from https://docs.katalon.com/
+Input your katalon studio version number, katalon command, and apiKey
 
-**Required** the katalon commands , apikey and test cases files 
+**Required** the katalon studio version number, katalon commands , apikey and test cases files 
 
 
 This is the example to using github action <br>
 Please change to the latest github action version and your Input. <br>
 
-Setup API Key using Secret name :  KATALON_API_NAME
-
-Katalon Github Action Marketplace link :  https://github.com/marketplace/actions/katalon-studio
-
+Setup API Key using Secret name :  API_KEY
 
 
 ## Example usage
 ```yaml
-on: [push]
-
 jobs:
-  katalon_test_job:
-    runs-on: ubuntu-latest
-    name: Run katalon Studio Test CLI
+  build:
+    runs-on: windows-latest
     steps:
-    # To use this repository's private action, you must check out the repository
     - name: Checkout
-      uses: actions/checkout@v1
-    - name: Get and run action
-      uses: katalon-studio/katalon-studio-github-action@1.4
+      uses: actions/checkout@v2
+    # Runs Katalon Studio Action
+    - name: Katalon Studio Github Action
+      uses: atluu315/Katalon_Studio_Github_Action@1.2
       with:
-        katalon_api_key: ${{ secrets.KATALON_API_KEY }}
-        Katalon_command: "-browserType=Chrome -retry=0 -statusDelay=15 -testSuitePath=Test Suites/TS_RegressionTest"
+          version: '7.5.5'
+          projectPath: '${{ github.workspace }}\<project name>.prj'
+          args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Run All Test Suites" -apiKey= ${{ secrets.API_KEY }} --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY'
 ```
+>>>>>>> new-origin/master

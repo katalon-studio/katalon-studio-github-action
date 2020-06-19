@@ -1,17 +1,27 @@
-# action.yml
-name: 'Katalon-Studio'
-description: 'KS Action for running test'
+name: 'Katalon Studio Github Action'
+description: 'Execute Katalon Studio'
 inputs:
-  ks_command:
-    description: 'katalon parameter'
-    required: true
-  ks_api_key:
-    description: 'api key'
-    required: true
+      version: #id of input
+            description: 'Which version of Katalon Studio to run'
+            required: true
+            default: ''
+            
+      location:
+            description: 'Location of Katalon Studio on local machine'
+            required: true
+            default: ''
+            
+      projectPath:
+            description: 'Project path to Katalon Studio'
+            required: true
+            default: ''
+            
+      args:
+            description: 'Arguments to run Katalon Studio Project'
+            required: true
+            default: ''
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.ks_command}}
-    - ${{ inputs.ks_api_key}}
-  
+      using: 'node12'
+      main: 'index.js'
+>>>>>>> new-origin/master
