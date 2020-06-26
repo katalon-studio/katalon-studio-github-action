@@ -6,13 +6,13 @@ This action allows you to run KS test and with your test cases source codes.
 
 Input your katalon studio version number, katalon command, and apiKey
 
-**Required** the katalon studio version number, katalon commands , apikey and test cases files 
+**Required** the katalon studio version number, katalon commands, apikey and test cases files 
 
 
-This is the example to using github action <br>
+This is the example to using github action. <br>
 Please change to the latest github action version and your Input. <br>
 
-Setup API Key using Secret name :  API_KEY
+Setup API Key using Secret name: API_KEY
 
 
 ## Example usage

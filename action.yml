@@ -24,4 +24,3 @@ inputs:
 runs:
       using: 'node12'
       main: 'index.js'
->>>>>>> new-origin/master
