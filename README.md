@@ -1,21 +1,11 @@
 # Katalon Studio action test
 
-This action allows you to run KS test and with your test cases source codes. 
-
-## Inputs
-
-Input your katalon studio version number, katalon command, and apiKey
-
-**Required** the katalon studio version number, katalon commands, apikey and test cases files 
-
-
-This is the example to using github action. <br>
-Please change to the latest github action version and your Input. <br>
-
-Setup API Key using Secret name: API_KEY
-
+This action allows you to run KS test and with your test cases source codes.
 
 ## Example usage
+
+Setup API Key using Secret name: `API_KEY`.
+
 ```yaml
 name: CI
 on:
@@ -31,7 +21,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Katalon Studio Github Action
-      uses: katalon-studio/katalon-studio-github-action@master
+      uses: katalon-studio/katalon-studio-github-action@v2
       with:
           version: '7.5.5'
           projectPath: '${{ github.workspace }}'
