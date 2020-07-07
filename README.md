@@ -1,6 +1,6 @@
 # Katalon Studio Github Action
 
-This action allows you to run KS test and with your test cases source codes.
+This action allows you to run Katalon Studio projects.
 
 ## Example usage
 
