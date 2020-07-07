@@ -17,17 +17,23 @@ Setup API Key using Secret name: API_KEY
 
 ## Example usage
 ```yaml
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
 jobs:
   build:
     runs-on: windows-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    # Runs Katalon Studio Action
     - name: Katalon Studio Github Action
-      uses: atluu315/Katalon_Studio_Github_Action@1.2
+      uses: katalon-studio/katalon-studio-github-action@master
       with:
           version: '7.5.5'
-          projectPath: '${{ github.workspace }}\<project name>.prj'
-          args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Run All Test Suites" -apiKey= ${{ secrets.API_KEY }} --config -proxy.auth.option=NO_PROXY -proxy.system.option=NO_PROXY'
+          projectPath: '${{ github.workspace }}'
+          args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Simple Test Suite Collection" -apiKey= ${{ secrets.API_KEY }} --config -webui.autoUpdateDrivers=true'
 ```
