@@ -6,17 +6,28 @@ const user_projectPath = core.getInput("projectPath");
 const user_args = core.getInput("args");
 
 try {
-  execute(user_version, "", user_projectPath, user_args, "", "", {
-    info: function (message) {
-      console.log(message);
-    },
-    debug: function (message) {
-      console.log(message);
-    },
-    error: function (message) {
-      console.error(message);
-    },
-  });
+  const status = await execute(
+    user_version,
+    "",
+    user_projectPath,
+    user_args,
+    "",
+    "",
+    {
+      info: function (message) {
+        console.log(message);
+      },
+      debug: function (message) {
+        console.log(message);
+      },
+      error: function (message) {
+        console.error(message);
+      },
+    }
+  );
+  if (status !== 0) {
+    core.setFailed(`Exit code ${status}.`);
+  }
 } catch (error) {
   core.setFailed(error.message);
 }
