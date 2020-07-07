@@ -1,23 +1,18 @@
-name: 'Katalon Studio Github Action'
-description: 'Execute Katalon Studio'
+name: 'Katalon-Studio'
+description: 'Execute Katalon Studio projects'
 inputs:
-      version: #id of input
+      version:
             description: 'Which version of Katalon Studio to run'
             required: true
             default: ''
             
-      location:
-            description: 'Location of Katalon Studio on local machine'
-            required: true
-            default: ''
-            
       projectPath:
-            description: 'Project path to Katalon Studio'
+            description: 'Where the Katalon Studio project is checked out'
             required: true
             default: ''
             
       args:
-            description: 'Arguments to run Katalon Studio Project'
+            description: 'What arguments to run Katalon Studio project'
             required: true
             default: ''
 
