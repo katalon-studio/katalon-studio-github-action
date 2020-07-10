@@ -1,4 +1,4 @@
-name: 'Katalon-Studio'
+name: 'Katalon Studio'
 description: 'Execute Katalon Studio projects'
 inputs:
       version:
