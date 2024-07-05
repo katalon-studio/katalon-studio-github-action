@@ -21,7 +21,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3.0
+      uses: actions/checkout@v4
     - name: Katalon Studio Github Action
       uses: katalon-studio/katalon-studio-github-action@v3.0
       with:
