@@ -23,9 +23,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Katalon Studio Github Action
-      uses: katalon-studio/katalon-studio-github-action@v3.0
+      uses: katalon-studio/katalon-studio-github-action@v4.0
       with:
-          version: '7.5.5'
+          version: '9.6.0'
           projectPath: '${{ github.workspace }}'
           args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Simple Test Suite Collection" -apiKey= ${{ secrets.API_KEY }} --config -webui.autoUpdateDrivers=true'
 ```
