@@ -18,7 +18,7 @@
   "homepage": "https://github.com/atluu315/Github_Action#readme",
   "dependencies": {
     "@actions/core": "^1.2.4",
-    "@actions/github": "^3.0.0",
+    "@actions/github": "^6.0.0",
     "katalon-cli": "github:katalon-studio/katalon-agent#v1.4.0"
   }
 }
