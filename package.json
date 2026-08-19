@@ -20,5 +20,8 @@
     "@actions/core": "^1.2.4",
     "@actions/github": "^3.0.0",
     "katalon-cli": "github:katalon-studio/katalon-agent#v1.4.0"
+  },
+  "overrides": {
+    "tough-cookie@<4.1.3": "4.1.3"
   }
 }
