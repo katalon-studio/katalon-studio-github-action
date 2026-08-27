@@ -1,21 +1,21 @@
-name: 'Katalon Studio'
-description: 'Execute Katalon Studio projects'
+name: Katalon Studio
+description: Execute Katalon Studio projects
 inputs:
       version:
-            description: 'Which version of Katalon Studio to run'
+            description: Which version of Katalon Runtime Engine to run
             required: true
             default: ''
             
       projectPath:
-            description: 'Where the Katalon Studio project is checked out'
+            description: Where the Katalon Studio project is checked out
             required: true
             default: ''
             
       args:
-            description: 'What arguments to run Katalon Studio project'
+            description: What arguments to run Katalon Studio project
             required: true
             default: ''
 
 runs:
-      using: 'node20'
-      main: 'index.js'
+      using: node24
+      main: dist/index.js

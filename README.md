@@ -21,11 +21,11 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: Katalon Studio Github Action
-      uses: katalon-studio/katalon-studio-github-action@v4.0
+      uses: katalon-studio/katalon-studio-github-action@v5.0
       with:
-          version: '9.6.0'
+          version: '11.4.0'
           projectPath: '${{ github.workspace }}'
           args: '-noSplash -retry=0 -testSuiteCollectionPath="Test Suites/Simple Test Suite Collection" -apiKey= ${{ secrets.API_KEY }} --config -webui.autoUpdateDrivers=true'
 ```
