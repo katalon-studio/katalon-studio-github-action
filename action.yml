@@ -2,7 +2,7 @@ name: 'Katalon Studio'
 description: 'Execute Katalon Studio projects'
 inputs:
       version:
-            description: 'Which version of Katalon Studio to run'
+            description: 'Which version of Katalon Runtime Engine to run'
             required: true
             default: ''
             

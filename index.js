@@ -1,12 +1,12 @@
-const { execute } = require("katalon-cli/src/katalon-studio");
+const { execute } = require("katalon-agent/src/service/katalon-studio");
 const core = require("@actions/core");
 
-const user_version = core.getInput("version");
-const user_projectPath = core.getInput("projectPath");
-const user_args = core.getInput("args");
+const kreVersion = core.getInput("version");
+const projectPath = core.getInput("projectPath");
+const kreArgs = core.getInput("args");
 
 try {
-  execute(user_version, "", user_projectPath, user_args, "", "", {
+  execute(kreVersion, "", projectPath, kreArgs, "", "", {
     info: function (message) {
       console.log(message);
     },
