@@ -1,0 +1,64 @@
+name: Verify action
+
+# Runs this action against a real Katalon project on every OS we support, so a
+# branch cannot be tagged for release without something having actually run it.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      ks_version:
+        description: 'Katalon Runtime Engine version to run'
+        default: '11.4.0'
+        type: string
+
+jobs:
+  run:
+    name: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout this action
+        uses: actions/checkout@v4
+
+      - name: Checkout a Katalon project to run against
+        uses: actions/checkout@v4
+        with:
+          repository: katalon-studio-samples/test-project-sample
+          path: sample
+
+      # KRE opens an SWT display even for a headless browser; without one it
+      # exits 13 on "Cannot open display" before running any test.
+      - name: Start a virtual display
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb
+          Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+          echo "DISPLAY=:99" >> "$GITHUB_ENV"
+
+      - name: Run this action
+        uses: ./
+        with:
+          version: ${{ inputs.ks_version || '11.4.0' }}
+          projectPath: ${{ github.workspace }}/sample
+          args: >-
+            -noSplash -retry=0
+            -testSuitePath="Test Suites/Simple Test Suite"
+            -browserType="Chrome (headless)"
+            -apiKey=${{ secrets.KATALON_API_KEY }}
+            --config -webui.autoUpdateDrivers=true
+
+      - name: Upload KRE reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports-${{ matrix.os }}
+          path: sample/Reports/**
+          if-no-files-found: warn
