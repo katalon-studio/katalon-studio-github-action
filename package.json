@@ -1,6 +1,6 @@
 {
   "name": "github_action",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Execute Katalon Studio projects",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/katalon-studio/katalon-studio-github-action#readme",
   "dependencies": {
     "@actions/core": "^3.0.1",
-    "katalon-agent": "github:katalon-studio/katalon-agent#0aac46f"
+    "katalon-agent": "github:katalon-studio/katalon-agent#2e6b82c"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^29.0.3",
